@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, Terminal, Code2, Cpu, User } from "lucide-react";
+import { Github, Terminal, Code2, Cpu, User, Database, Globe, Zap, Activity } from "lucide-react";
 import DashboardPreview from "./DashboardPreview";
 import { cn } from "@/lib/utils"; // Assuming utils or inline cn
 
@@ -35,13 +35,147 @@ export default function HeroUiLayout({ isReveal = false }: { isReveal?: boolean 
                 />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 h-[600px] flex items-end justify-center md:justify-end pb-20">
 
-                {/* Main Content Group */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 h-full flex items-end justify-center md:justify-end pb-20">
+
+                {/* --- LEFT STACK (Cascading Outwards) --- */}
+
+                {/* L1: Stakeholder (Top, near beam) */}
+                <div className={cn("absolute top-[10%] left-[25%] w-[260px] p-4 rounded-xl border border-white/10 bg-[#0A0A0B]/90 backdrop-blur-md transition-all duration-300 group hover:border-white pointer-events-auto z-20", ghostClass)}>
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="text-sm text-slate-400 font-medium">Stakeholder communication</div>
+                            <div className="flex gap-2">
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-400">Medium</span>
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-400">Management</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div className="flex items-center gap-2 text-xs text-slate-500">
+                                <div className="w-4 h-4 rounded-full border border-slate-600 border-t-transparent animate-spin" /> 50%
+                            </div>
+                            <div className="flex -space-x-2">
+                                <div className="w-6 h-6 rounded-full bg-purple-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-purple-300">JP</div>
+                                <div className="w-6 h-6 rounded-full bg-blue-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-blue-300">AS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* L2: Frontend (Mid, stepped left) */}
+                <div className={cn("absolute top-[20%] left-[18%] w-[260px] p-4 rounded-xl border border-white/10 bg-[#0A0A0B]/90 backdrop-blur-md transition-all duration-300 group hover:border-white pointer-events-auto z-30", ghostClass)}>
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="text-sm text-slate-400 font-medium">Frontend Architecture</div>
+                            <div className="flex gap-2">
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-pink-300">High</span>
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-cyan-300">React</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div className="flex items-center gap-2 text-xs text-emerald-400">
+                                <Activity className="w-4 h-4" /> Active
+                            </div>
+                            <div className="flex -space-x-2">
+                                <div className="w-6 h-6 rounded-full bg-orange-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-orange-300">MK</div>
+                                <div className="w-6 h-6 rounded-full bg-teal-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-teal-300">DL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* L3: Security Audit (Bottom, stepped further left) */}
+                <div className={cn("absolute top-[30%] left-[11%] w-[260px] p-4 rounded-xl border border-white/10 bg-[#0A0A0B]/90 backdrop-blur-md transition-all duration-300 group hover:border-white pointer-events-auto z-40", ghostClass)}>
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="text-sm text-slate-400 font-medium">Security Audit</div>
+                            <div className="flex gap-2">
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-red-300">Critical</span>
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-400">Infra</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div className="flex items-center gap-2 text-xs text-orange-400">
+                                <Zap className="w-4 h-4" /> Scanning
+                            </div>
+                            <div className="w-6 h-6 rounded-full bg-red-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-red-300">Bot</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* --- RIGHT STACK (Cascading Outwards) --- */}
+
+                {/* R1: Cloud Infra (Top, near beam) */}
+                <div className={cn("absolute top-[10%] right-[8%] w-[260px] p-4 rounded-xl border border-white/10 bg-[#0A0A0B]/90 backdrop-blur-md transition-all duration-300 group hover:border-white pointer-events-auto z-20", ghostClass)}>
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="text-sm text-slate-400 font-medium">Cloud Infrastructure</div>
+                            <div className="flex gap-2">
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-yellow-300">DevOps</span>
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-400">AWS</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div className="flex items-center gap-2 text-xs text-slate-500">
+                                <div className="w-4 h-4 rounded-full border border-slate-600 border-t-transparent animate-spin" /> Running
+                            </div>
+                            <div className="flex -space-x-2">
+                                <div className="w-6 h-6 rounded-full bg-indigo-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-indigo-300">AL</div>
+                                <div className="w-6 h-6 rounded-full bg-rose-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-rose-300">SJ</div>
+                                <div className="w-6 h-6 rounded-full bg-slate-700/50 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-slate-300">+2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* R2: System Analysis (Mid, stepped right) */}
+                <div className={cn("absolute top-[20%] right-[4%] w-[260px] p-4 rounded-xl border border-white/10 bg-[#0A0A0B]/90 backdrop-blur-md transition-all duration-300 group hover:border-white pointer-events-auto z-30", ghostClass)}>
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="text-sm text-slate-400 font-medium">System analysis</div>
+                            <div className="flex gap-2">
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-purple-300">Research</span>
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-green-300">Planning</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div className="flex items-center gap-2 text-xs text-emerald-400">
+                                <Zap className="w-4 h-4 text-yellow-400" /> On Track
+                            </div>
+                            <div className="flex -space-x-2">
+                                <div className="w-6 h-6 rounded-full bg-green-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-green-300">SK</div>
+                                <div className="w-6 h-6 rounded-full bg-red-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-red-300">MJ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* R3: Database Cluster (Bottom, stepped further right) */}
+                <div className={cn("absolute top-[30%] right-[0%] w-[260px] p-4 rounded-xl border border-white/10 bg-[#0A0A0B]/90 backdrop-blur-md transition-all duration-300 group hover:border-white pointer-events-auto z-40", ghostClass)}>
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="text-sm text-slate-400 font-medium">Database Cluster</div>
+                            <div className="flex gap-2">
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-blue-300">Storage</span>
+                                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-400">Redis</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div className="flex items-center gap-2 text-xs text-blue-400">
+                                <Database className="w-4 h-4" /> Syncing
+                            </div>
+                            <div className="w-6 h-6 rounded-full bg-blue-500/20 border border-[#0A0A0B] flex items-center justify-center text-[8px] text-blue-300">DB</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* Main Content Group (Restored) */}
                 <div className="relative flex items-end gap-6">
 
                     {/* Dashboard */}
-                    <div className={cn("transition-all duration-300", dashboardClass)}>
+                    <div className={cn("transition-all duration-300 group pointer-events-auto", dashboardClass)}>
                         <DashboardPreview />
                     </div>
 
@@ -56,8 +190,8 @@ export default function HeroUiLayout({ isReveal = false }: { isReveal?: boolean 
                                 {/* Image placeholder */}
                                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
                                 <div className="relative z-10">
-                                    <h4 className="text-white font-bold">John Arnold</h4>
-                                    <p className="text-xs text-purple-300">Cardio specialist</p>
+                                    <h4 className="text-white font-bold">Prakhar Sharma</h4>
+                                    <p className="text-xs text-purple-300">B.tech student</p>
                                 </div>
                             </div>
                             <div className="mt-4 flex gap-2">
@@ -67,24 +201,8 @@ export default function HeroUiLayout({ isReveal = false }: { isReveal?: boolean 
                         </div>
                     </div>
 
-                    {/* Ghost Box 1: Github */}
-                    <div className={cn("absolute -top-12 -left-12 p-3 rounded-xl bg-black/50 border border-white/10 backdrop-blur-md transition-all duration-300", ghostClass)}>
-                        <Github className="w-6 h-6 text-white" />
-                    </div>
-
-                    {/* Ghost Box 2: Terminal */}
-                    <div className={cn("absolute top-32 -right-16 p-3 rounded-xl bg-black/50 border border-white/10 backdrop-blur-md transition-all duration-300 delay-75", ghostClass)}>
-                        <Terminal className="w-6 h-6 text-purple-400" />
-                    </div>
-
-                    {/* Ghost Box 3: Code */}
-                    <div className={cn("absolute -bottom-8 left-1/2 p-3 rounded-xl bg-black/50 border border-white/10 backdrop-blur-md transition-all duration-300 delay-100", ghostClass)}>
-                        <Code2 className="w-6 h-6 text-blue-400" />
-                    </div>
-
                 </div>
             </div>
-
         </div>
     );
 }
