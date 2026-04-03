@@ -34,6 +34,9 @@ export default function BeamHero() {
         >
             {/* 1. Laser Flow Background (The Beam) */}
             <LaserFlow
+                className=""           // <-- Add this
+                style={{}}             // <-- Add this
+                dpr={1}
                 horizontalBeamOffset={0.1}
                 verticalBeamOffset={0.0}
                 color="#9278ce" // User requested specific purple
